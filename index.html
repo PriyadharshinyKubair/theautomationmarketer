@@ -1,590 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Priyadharshiny K — Marketing Automation</title>
-<meta name="description" content="Marketing automation — I build the Marketing campaigns, and the tracking that proves they worked. Chennai, India.">
+<title>Priyadharshiny — Lifecycle Marketing</title>
+<meta name="description" content="Priyadharshiny K — lifecycle marketing specialist in Chennai. Automated customer journeys, campaign QA, GA4 and demand generation.">
+<meta property="og:title" content="Priyadharshiny — Lifecycle Marketing">
+<meta property="og:description" content="A lifecycle marketing specialist building journeys that turn visitors into customers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#080B14;
-  --surface:#121A2C;
-  --surface-2:#18223A;
-  --ink:#E9EDF7;
-  --muted:#8B97B0;
-  --line:#243050;
-  --blue:#4D7CFF;
-  --violet:#A855F7;
-  --pink:#FF6B9D;
-  --gold:#FFD166;
-  --display:'Archivo',system-ui,sans-serif;
-  --serif:'Newsreader',Georgia,serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--bg);color:var(--ink);
-  font-family:var(--serif);font-size:17.5px;line-height:1.62;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
-}
+html,body,#root{background:#0C0C0C}
+body{font-family:'Kanit',sans-serif;color:#D7E2EA;overflow-x:clip;-webkit-font-smoothing:antialiased}
+#root{overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:#B600A8;color:#fff}
 
-/* ===== ambient aurora ===== */
-#aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.42}
-.b1{width:44vw;height:44vw;background:#2B4DD6;top:-8%;left:-6%;animation:f1 26s ease-in-out infinite}
-.b2{width:38vw;height:38vw;background:#7B2FD6;top:22%;right:-8%;animation:f2 31s ease-in-out infinite}
-.b3{width:34vw;height:34vw;background:#D6357A;bottom:-6%;left:26%;animation:f3 36s ease-in-out infinite}
-@keyframes f1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(9vw,7vh) scale(1.18)}}
-@keyframes f2{0%,100%{transform:translate(0,0) scale(1.05)}50%{transform:translate(-11vw,10vh) scale(.9)}}
-@keyframes f3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7vw,-8vh) scale(1.2)}}
-
-
-/* ===== page-wide journey network ===== */
-#net{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-#net svg{width:100%;height:100%;display:block}
-#net .nwire path{
-  opacity:.22;stroke-dasharray:6 10;
-  animation:netRun 2.4s linear infinite;
-}
-@keyframes netRun{to{stroke-dashoffset:-32}}
-#net .nnode rect{opacity:.3;animation:netPulse 5.5s ease-in-out infinite}
-#net .nnode rect:nth-child(2n){animation-delay:1.3s}
-#net .nnode rect:nth-child(3n){animation-delay:2.6s}
-@keyframes netPulse{0%,100%{opacity:.16;stroke:#38477A}50%{opacity:.5;stroke:#4D7CFF}}
-#net circle{opacity:.65}
-@media (max-width:760px){#net .nwire path{opacity:.14}#net circle{opacity:.45}}
-
-.wrap{max-width:1000px;margin:0 auto;padding:0 30px;position:relative;z-index:1}
-
-/* ===== hero ===== */
-header{padding:96px 0 56px}
-.hero{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
-.kicker{
-  font-family:var(--mono);font-size:11px;letter-spacing:.17em;
-  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:26px;
-}
-h1{
-  font-family:var(--display);font-weight:800;
-  font-size:clamp(2.9rem,10.5vw,6.2rem);line-height:.88;
-  letter-spacing:-.045em;margin-bottom:28px;
-  background:linear-gradient(100deg,#FFFFFF 0%,#BFD0FF 22%,#FFFFFF 42%,#E4CCFF 62%,#FFFFFF 84%);
-  background-size:260% 100%;
+.hero-heading{
+  background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);
   -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:shimmer 9s linear infinite;
+  -webkit-text-fill-color:transparent;color:transparent;
 }
-@keyframes shimmer{0%{background-position:180% 0}100%{background-position:-80% 0}}
-.tagline{font-size:clamp(1.25rem,3.4vw,1.9rem);line-height:1.34;max-width:19em;color:#D2DAEC}
-.mark{
-  position:relative;color:#fff;
-  background-image:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));
-  background-repeat:no-repeat;background-size:0% 2px;background-position:0 100%;
-  padding-bottom:3px;transition:background-size 1.1s cubic-bezier(.2,.8,.3,1);
-}
-.mark.on{background-size:100% 2px}
+.pad{padding-left:1.25rem;padding-right:1.25rem}
+@media(min-width:640px){.pad{padding-left:2rem;padding-right:2rem}}
+@media(min-width:768px){.pad{padding-left:2.5rem;padding-right:2.5rem}}
 
-.portrait{position:relative;width:212px;height:248px}
-.portrait::before{
-  content:"";position:absolute;inset:-3px;border-radius:8px;
-  background:linear-gradient(150deg,var(--blue),var(--violet) 52%,var(--pink));
-  animation:drift 11s ease-in-out infinite;
-  filter:blur(1px);
-}
-.portrait img,.portrait .fallback{
-  position:absolute;inset:0;width:100%;height:100%;
-  border-radius:7px;object-fit:cover;object-position:center top;
-  transform:rotate(2deg);transition:transform .4s cubic-bezier(.2,.8,.3,1);
-}
-.portrait .fallback{
-  background:var(--surface);display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:800;font-size:3.4rem;
-  letter-spacing:-.04em;color:var(--blue);
-}
-@keyframes drift{0%,100%{transform:rotate(-3.5deg) scale(1)}50%{transform:rotate(-6deg) scale(1.03)}}
-.portrait:hover img,.portrait:hover .fallback{transform:rotate(-1deg) scale(1.02)}
+/* ---------- fade in ---------- */
+.fade-in{opacity:0;transform:translate(var(--fade-x,0),var(--fade-y,30px));
+  transition:opacity .7s cubic-bezier(.25,.1,.25,1),transform .7s cubic-bezier(.25,.1,.25,1)}
+.fade-in.vis{opacity:1;transform:none}
 
-.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:38px}
-.chips a{
-  font-family:var(--mono);font-size:12.5px;color:var(--ink);text-decoration:none;
-  background:var(--surface);border:1px solid var(--line);border-radius:3px;
-  padding:9px 16px;transition:border-color .18s,color .18s,transform .18s,box-shadow .18s;
+/* ---------- buttons ---------- */
+.contact-btn{
+  display:inline-block;border:0;cursor:pointer;border-radius:999px;
+  font-family:inherit;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff;
+  padding:.75rem 2rem;font-size:.75rem;
+  background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);
+  box-shadow:0px 4px 4px rgba(181,1,167,.25),4px 4px 12px #7721B1 inset;
+  outline:2px solid #fff;outline-offset:-3px;
+  transition:transform .3s ease-out,filter .3s;will-change:transform;
 }
-.chips a:hover{
-  border-color:var(--blue);color:#fff;transform:translateY(-2px);
-  box-shadow:0 6px 20px -8px var(--blue);
+.contact-btn:hover{filter:brightness(1.12)}
+@media(min-width:640px){.contact-btn{padding:.875rem 2.5rem;font-size:.875rem}}
+@media(min-width:768px){.contact-btn{padding:1rem 3rem;font-size:1rem}}
+.ghost-btn{
+  display:inline-block;border:2px solid #D7E2EA;border-radius:999px;color:#D7E2EA;
+  font-weight:500;text-transform:uppercase;letter-spacing:.15em;
+  padding:.75rem 2rem;font-size:.875rem;transition:background .25s;cursor:pointer;background:transparent;font-family:inherit
 }
+.ghost-btn:hover{background:rgba(215,226,234,.1)}
+@media(min-width:640px){.ghost-btn{padding:.875rem 2.5rem;font-size:1rem}}
 
-/* ===== animated journey ===== */
-.flow{
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:12px 0 8px;margin-bottom:6px;overflow:hidden;
-}
-.flow svg{width:100%;height:auto;display:block;max-height:150px}
-.flow .node rect{
-  fill:var(--surface);stroke:var(--line);stroke-width:1.2;
-  animation:nodePulse 4.2s ease-in-out infinite;
-}
-.flow .node.n-b rect{animation-delay:.7s;stroke:#3A4B7A}
-.flow .node.n-c rect{animation-delay:1.4s;stroke:#3A4B7A}
-.flow .node.n-d rect{animation-delay:2.1s}
-.flow .node text{
-  fill:#9DAAC6;font-family:var(--mono);font-size:12px;
-  letter-spacing:.08em;text-anchor:middle;text-transform:uppercase;
-}
-@keyframes nodePulse{
-  0%,100%{stroke:var(--line)}
-  50%{stroke:#4D7CFF}
-}
-.flow .wires path{
-  stroke-dasharray:5 7;
-  animation:wireRun 1.6s linear infinite;
-}
-@keyframes wireRun{to{stroke-dashoffset:-24}}
+/* ---------- hero ---------- */
+.hero{height:100svh;display:flex;flex-direction:column;overflow-x:clip;position:relative}
+.nav{display:flex;justify-content:space-between;padding:1.5rem 1.5rem 0;position:relative;z-index:20}
+@media(min-width:768px){.nav{padding:2rem 2.5rem 0}}
+.nav a{color:#D7E2EA;font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.875rem;transition:opacity .2s}
+.nav a:hover{opacity:.7}
+@media(min-width:768px){.nav a{font-size:1.125rem}}
+@media(min-width:1024px){.nav a{font-size:1.4rem}}
 
-/* ===== sections ===== */
-section{
-  display:grid;grid-template-columns:172px 1fr;gap:44px;
-  padding:46px 0;border-top:1px solid var(--line);
+.hero-title-wrap{overflow:hidden;position:relative;z-index:20;pointer-events:none}
+h1.hero-h{
+  font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1;white-space:nowrap;width:100%;
+  font-size:14vw;margin-top:1.5rem;text-align:center
 }
-.label{
-  font-family:var(--mono);font-size:11px;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--muted);position:sticky;top:40px;align-self:start;
-}
-.label::before{
-  content:"";display:block;width:22px;height:2px;margin-bottom:11px;
-  background:linear-gradient(90deg,var(--blue),var(--violet));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .55s cubic-bezier(.2,.8,.3,1) .1s;
-}
-.up.in .label::before{transform:scaleX(1)}
-.label .mini{display:block;width:60px;height:44px;margin-top:14px;opacity:.9}
-@media (max-width:760px){.label .mini{display:none}}
-.body > p{max-width:33em;margin-bottom:15px;color:#C6CFE2}
-.body > p:last-child{margin-bottom:0}
+@media(min-width:640px){h1.hero-h{font-size:15vw;margin-top:1rem}}
+@media(min-width:768px){h1.hero-h{font-size:16vw;margin-top:-1.25rem}}
+@media(min-width:1024px){h1.hero-h{font-size:17.5vw}}
 
-/* ===== toolkit ===== */
-.kit{display:grid;gap:22px}
-.kit h3{
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:10px;
-}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tag{
-  font-family:var(--display);font-weight:600;font-size:13px;
-  background:var(--surface);border:1px solid var(--line);color:var(--ink);
-  border-radius:3px;padding:6px 12px;
-  transition:transform .18s,border-color .18s,box-shadow .18s;
-}
-.t-blue   .tag:hover{border-color:var(--blue);box-shadow:0 6px 18px -8px var(--blue)}
-.t-green  .tag:hover{border-color:#39D98A;box-shadow:0 6px 18px -8px #39D98A}
-.t-amber  .tag:hover{border-color:var(--gold);box-shadow:0 6px 18px -8px var(--gold)}
-.t-violet .tag:hover{border-color:var(--violet);box-shadow:0 6px 18px -8px var(--violet)}
-.tag:hover{transform:translateY(-3px)}
+.hero-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;
+  padding-bottom:1.75rem;position:relative;z-index:20;gap:1rem}
+@media(min-width:640px){.hero-bottom{padding-bottom:2rem}}
+@media(min-width:768px){.hero-bottom{padding-bottom:2.5rem}}
+.hero-bottom p{color:#D7E2EA;font-weight:300;text-transform:uppercase;letter-spacing:.04em;line-height:1.35;
+  font-size:clamp(.75rem,1.4vw,1.5rem);max-width:160px}
+@media(min-width:640px){.hero-bottom p{max-width:220px}}
+@media(min-width:768px){.hero-bottom p{max-width:260px}}
 
-/* ===== entries ===== */
-.entry{position:relative;padding:26px 0;border-top:1px dashed var(--line);transition:padding-left .3s cubic-bezier(.2,.8,.3,1)}
-.entry:first-child{border-top:0;padding-top:0}
-.entry:last-child{padding-bottom:0}
-.entry::before{
-  content:"";position:absolute;left:0;top:26px;bottom:0;width:2px;opacity:0;
-  background:linear-gradient(var(--blue),var(--violet));transition:opacity .3s;
+/* ---------- living portrait ---------- */
+.hero-portrait-wrap{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  z-index:10;width:400px;touch-action:pan-y
 }
-.entry:first-child::before{top:0}
-.entry:hover{padding-left:18px}
-.entry:hover::before{opacity:1}
-.entry h3{
-  font-family:var(--display);font-weight:700;font-size:1.4rem;
-  letter-spacing:-.022em;line-height:1.15;margin-bottom:5px;transition:color .22s;
+@media(min-width:640px){.hero-portrait-wrap{width:500px}}
+@media(min-width:768px){.hero-portrait-wrap{width:600px}}
+@media(min-width:1024px){.hero-portrait-wrap{width:clamp(640px,78vh,46vw)}}
+.hero-portrait-inner{position:relative;transition:transform .6s ease-in-out;will-change:transform}
+.hero-portrait-inner img{width:100%;height:auto;object-fit:contain;user-select:none;-webkit-user-drag:none}
+#faceGl{position:absolute;left:-35%;top:-35%;width:170%;height:170%;pointer-events:none}
+.portrait-hint{
+  position:absolute;left:50%;bottom:-2.2rem;transform:translateX(-50%);white-space:nowrap;
+  font-size:.7rem;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:rgba(215,226,234,.38);
+  transition:opacity .5s;pointer-events:none
 }
-.entry:hover h3{color:var(--blue)}
-.meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:13px}
-.entry p{max-width:33em;margin-bottom:14px;color:#C6CFE2}
+.portrait-hint.gone{opacity:0}
 
-/* ===== rows ===== */
-.row{
-  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;
-  padding:15px 0;border-top:1px dashed var(--line);
-  transition:padding-left .26s cubic-bezier(.2,.8,.3,1);
-}
-.row:first-child{border-top:0;padding-top:0}
-.row:last-child{padding-bottom:0}
-.row:hover{padding-left:10px}
-.row .who{font-family:var(--display);font-weight:700;font-size:1.06rem;letter-spacing:-.015em;transition:color .22s}
-.row:hover .who{color:var(--blue)}
-.row .what{display:block;font-size:.95rem;color:var(--muted);margin-top:2px}
-.row .when{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+/* ---------- about ---------- */
+.about{min-height:100svh;padding:5rem 1.25rem;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;position:relative;overflow:hidden;text-align:center}
+@media(min-width:640px){.about{padding:5rem 2rem}}
+@media(min-width:768px){.about{padding:5rem 2.5rem}}
+.about h2,.svc h2{font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.03em;
+  font-size:clamp(3rem,12vw,160px)}
+.about .stack{display:flex;flex-direction:column;align-items:center;gap:2.5rem}
+@media(min-width:640px){.about .stack{gap:3.5rem}}
+@media(min-width:768px){.about .stack{gap:4rem}}
+.about .btnwrap{margin-top:4rem}
+@media(min-width:640px){.about .btnwrap{margin-top:5rem}}
+@media(min-width:768px){.about .btnwrap{margin-top:6rem}}
+#aboutText{color:#D7E2EA;font-weight:500;line-height:1.6;max-width:620px;
+  font-size:clamp(.95rem,1.8vw,1.25rem);position:relative}
+#aboutText p + p{margin-top:1.1rem}
+#aboutText .ch{position:relative;display:inline-block;white-space:pre}
+#aboutText .ch .lit{position:absolute;left:0;top:0;opacity:.2}
+.deco{position:absolute;pointer-events:none;z-index:0}
+.deco .obj{width:100%;aspect-ratio:1;border-radius:50%;position:relative}
+.d-moon .obj{background:radial-gradient(circle at 32% 28%,#E9F1F6,#9FB3C0 42%,#4E5B66 78%,#262E36);
+  box-shadow:inset -14px -18px 34px rgba(0,0,0,.55),0 0 60px rgba(187,204,215,.14)}
+.d-moon .obj::after{content:"";position:absolute;width:22%;aspect-ratio:1;border-radius:50%;left:52%;top:30%;
+  background:rgba(60,70,80,.4);box-shadow:-30% 0 0 rgba(0,0,0,0),0 0 12px rgba(0,0,0,.3) inset}
+.d-brick .obj{border-radius:22%;background:linear-gradient(145deg,#C84BD8,#7621B0 55%,#3A0F57);
+  box-shadow:inset -10px -14px 26px rgba(0,0,0,.45),0 0 60px rgba(182,0,168,.25)}
+.d-brick .obj::before,.d-brick .obj::after{content:"";position:absolute;width:26%;aspect-ratio:1;border-radius:50%;top:-11%;
+  background:linear-gradient(145deg,#D16BE0,#7621B0);box-shadow:inset -3px -5px 9px rgba(0,0,0,.4)}
+.d-brick .obj::before{left:17%}
+.d-brick .obj::after{right:17%}
+.d-ring .obj{background:conic-gradient(from 210deg,#BE4C00,#B600A8,#1E7FB0,#BE4C00);
+  mask:radial-gradient(circle,transparent 40%,#000 42%);-webkit-mask:radial-gradient(circle,transparent 40%,#000 42%);
+  filter:drop-shadow(0 0 40px rgba(190,76,0,.35))}
+.d-blob .obj{background:radial-gradient(circle at 34% 30%,#9FE8D4,#2FA37A 45%,#0E4738 80%);
+  border-radius:58% 42% 48% 52%/46% 54% 46% 54%;
+  box-shadow:inset -12px -16px 30px rgba(0,0,0,.5),0 0 60px rgba(47,163,122,.2)}
 
-/* ===== life ===== */
-.life{display:grid;gap:16px;max-width:33em}
-.life div{display:grid;grid-template-columns:28px 1fr;gap:13px;align-items:start}
-.life p{color:#C6CFE2}
-.life span{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:28px;height:28px;border-radius:50%;font-size:12px;
-  background:rgba(77,124,255,.16);color:var(--blue);
-}
-.life div:nth-child(2) span{background:rgba(255,209,102,.16);color:var(--gold)}
-.life div:nth-child(3) span{background:rgba(57,217,138,.16);color:#39D98A}
-.life div:nth-child(4) span{background:rgba(168,85,247,.18);color:var(--violet)}
+/* ---------- services ---------- */
+.svc{background:#fff;color:#0C0C0C;border-radius:40px 40px 0 0;padding:5rem 1.25rem;position:relative;z-index:5}
+@media(min-width:640px){.svc{border-radius:50px 50px 0 0;padding:6rem 2rem}}
+@media(min-width:768px){.svc{border-radius:60px 60px 0 0;padding:8rem 2.5rem}}
+.svc h2{color:#0C0C0C;text-align:center;margin-bottom:4rem}
+@media(min-width:640px){.svc h2{margin-bottom:5rem}}
+@media(min-width:768px){.svc h2{margin-bottom:7rem}}
+.svc-list{max-width:64rem;margin:0 auto}
+.svc-item{display:flex;align-items:flex-start;gap:1.25rem;padding:2rem 0;border-top:1px solid rgba(12,12,12,.15)}
+.svc-item:first-child{border-top:0}
+@media(min-width:640px){.svc-item{padding:2.5rem 0;gap:2rem}}
+@media(min-width:768px){.svc-item{padding:3rem 0;gap:3rem}}
+.svc-item .num{font-weight:900;font-size:clamp(3rem,10vw,140px);line-height:.85;color:#0C0C0C;letter-spacing:-.04em}
+.svc-item .nm{font-weight:500;font-size:clamp(1.05rem,2vw,1.9rem);letter-spacing:-.02em;line-height:1.15}
+.svc-body{flex:1}
+.svc-item .ds{font-weight:300;line-height:1.65;max-width:44rem;font-size:clamp(.85rem,1.5vw,1.15rem);opacity:.6;margin-top:.9rem}
+.svc-item .proof{font-weight:400;line-height:1.5;max-width:44rem;font-size:clamp(.82rem,1.4vw,1.05rem);
+  margin-top:1.4rem;padding-left:1.1rem;border-left:2px solid #B600A8;color:#0C0C0C;opacity:.9}
 
-/* ===== close ===== */
-.close{border-top:1px solid var(--line);padding:66px 0 90px;text-align:center}
-.close h2{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(1.7rem,4.6vw,2.5rem);letter-spacing:-.03em;margin-bottom:16px;
-}
-.close p{color:var(--muted);max-width:28em;margin:0 auto 30px}
-.close .chips{justify-content:center;margin-top:0}
-footer{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;padding:0 30px 56px;position:relative;z-index:1}
-a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+/* ---------- contact ---------- */
+.contact{background:#0C0C0C;border-radius:40px 40px 0 0;margin-top:-2.5rem;position:relative;z-index:10;
+  padding:8rem 1.25rem 5rem;text-align:center}
+@media(min-width:640px){.contact{border-radius:50px 50px 0 0;margin-top:-3rem}}
+@media(min-width:768px){.contact{border-radius:60px 60px 0 0;margin-top:-3.5rem}}
+.contact h2{font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.03em;font-size:clamp(2.4rem,9vw,120px)}
+.contact .links{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:3rem}
+.contact .mail{display:block;margin-top:2rem;font-weight:300;letter-spacing:.04em;color:rgba(215,226,234,.75);
+  font-size:clamp(.9rem,2vw,1.3rem)}
+.contact .mail:hover{color:#fff}
+footer{padding:3rem 1.25rem;text-align:center;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(215,226,234,.35);font-weight:300}
 
-/* ===== progress ===== */
-#prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:20;
-  background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink))}
-
-/* ===== load sequence ===== */
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-header .kicker,header h1,header .tagline,header .chips,header .portrait{
-  opacity:0;animation:rise .75s cubic-bezier(.2,.8,.3,1) forwards;
-}
-header .kicker{animation-delay:.05s}
-header h1{animation-delay:.16s}
-header .tagline{animation-delay:.30s}
-header .portrait{animation-delay:.38s}
-header .chips{animation-delay:.46s}
-
-.up{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.up.in{opacity:1;transform:none}
-
-@media (max-width:760px){
-  body{font-size:16.5px}
-  .wrap{padding:0 20px}
-  header{padding:58px 0 40px}
-  .hero{grid-template-columns:1fr;gap:30px}
-  .portrait{width:158px;height:186px;order:-1}
-  .portrait .fallback{font-size:2.6rem}
-  section{grid-template-columns:1fr;gap:18px;padding:34px 0}
-  .label{position:static}
-  .blob{filter:blur(64px);opacity:.34}
-  .close{padding:48px 0 66px}
-}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
-  .up,header .kicker,header h1,header .tagline,header .chips,header .portrait{opacity:1;transform:none}
-  .mark{background-size:100% 2px}
-  .label::before{transform:scaleX(1)}
-  h1{-webkit-text-fill-color:var(--ink);background:none}
-  #prog{display:none}
-  .flow .wires path,.flow .node rect{animation:none}
-  .flow circle{display:none}
-  #net{display:none}
-  .label .mini circle,.label .mini path{animation:none}
+  .fade-in{opacity:1;transform:none}
+  #aboutText .ch .lit{opacity:1}
 }
 </style>
 </head>
 <body>
+<div id="root">
 
-<div id="aurora" aria-hidden="true">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-</div>
-<div id="net" aria-hidden="true">
-  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <linearGradient id="nw" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#4D7CFF"/><stop offset="50%" stop-color="#A855F7"/><stop offset="100%" stop-color="#FF6B9D"/>
-      </linearGradient>
-      <filter id="ng" x="-80%" y="-80%" width="260%" height="260%">
-        <feGaussianBlur stdDeviation="4" result="b"/>
-        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <nav class="nav fade-in" style="--fade-y:-20px" data-delay="0">
+    <a href="#about">About</a>
+    <a href="#work">What I do</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <g class="nwire" fill="none" stroke="url(#nw)" stroke-width="1.3">
-      <path id="n1" d="M-60,150 C240,70 400,240 660,175 S1120,80 1500,160"/>
-      <path id="n2" d="M-60,455 C270,380 440,540 720,465 S1160,395 1500,455"/>
-      <path id="n3" d="M-60,745 C250,670 420,830 690,755 S1140,680 1500,750"/>
-      <path id="n4" d="M215,-60 C285,210 175,430 300,660 S225,900 340,1000"/>
-      <path id="n5" d="M1035,-60 C1105,230 995,455 1120,690 S1050,900 1170,1000"/>
-      <path id="n6" d="M-60,290 C300,330 520,190 780,300 S1200,540 1500,330"/>
-    </g>
-
-    <g class="nnode" fill="none" stroke="#4D7CFF" stroke-width="1.2">
-      <rect x="238" y="128" width="46" height="20" rx="4"/>
-      <rect x="672" y="150" width="46" height="20" rx="4"/>
-      <rect x="1096" y="128" width="46" height="20" rx="4"/>
-      <rect x="290" y="432" width="46" height="20" rx="4"/>
-      <rect x="742" y="440" width="46" height="20" rx="4"/>
-      <rect x="1132" y="418" width="46" height="20" rx="4"/>
-      <rect x="262" y="720" width="46" height="20" rx="4"/>
-      <rect x="700" y="730" width="46" height="20" rx="4"/>
-      <rect x="1108" y="700" width="46" height="20" rx="4"/>
-    </g>
-
-    <g filter="url(#ng)">
-      <circle r="3.2" fill="#8FB0FF"><animateMotion dur="17s" repeatCount="indefinite"><mpath href="#n1"/></animateMotion></circle>
-      <circle r="2.8" fill="#C6A0FF"><animateMotion dur="17s" begin="8.5s" repeatCount="indefinite"><mpath href="#n1"/></animateMotion></circle>
-      <circle r="3.2" fill="#C6A0FF"><animateMotion dur="21s" begin="3s" repeatCount="indefinite"><mpath href="#n2"/></animateMotion></circle>
-      <circle r="2.8" fill="#FF9CC0"><animateMotion dur="21s" begin="13s" repeatCount="indefinite"><mpath href="#n2"/></animateMotion></circle>
-      <circle r="3.2" fill="#FFC48F"><animateMotion dur="19s" begin="6s" repeatCount="indefinite"><mpath href="#n3"/></animateMotion></circle>
-      <circle r="2.8" fill="#8FB0FF"><animateMotion dur="24s" begin="2s" repeatCount="indefinite"><mpath href="#n4"/></animateMotion></circle>
-      <circle r="2.8" fill="#C6A0FF"><animateMotion dur="26s" begin="11s" repeatCount="indefinite"><mpath href="#n5"/></animateMotion></circle>
-      <circle r="3" fill="#FF9CC0"><animateMotion dur="23s" begin="5s" repeatCount="indefinite"><mpath href="#n6"/></animateMotion></circle>
-    </g>
-  </svg>
-</div>
-
-<div id="prog"></div>
-
-<div class="wrap">
-
-  <header>
-    <div class="hero">
-      <div class="hero-text">
-        <span class="kicker">Marketing automation · Chennai, India</span>
-        <h1>Priyadharshiny&nbsp;K</h1>
-        <p class="tagline">I build the Marketing campaigns, and the <span class="mark">tracking that proves they worked</span>.</p>
-      </div>
-      <div class="portrait">
-        <span class="fallback">PK</span>
-        <img src="photo.jpg" alt="Priyadharshiny K" onerror="this.style.display='none'">
-      </div>
-    </div>
-    <div class="chips">
-      <a href="mailto:priyadharshinyk@gmail.com">priyadharshinyk@gmail.com</a>
-      <a href="https://www.linkedin.com/in/priyadharshiny-kubair">LinkedIn</a>
-      <a href="tel:+916381156151">+91 63811 56151</a>
-    </div>
-  </header>
-
-  <div class="flow" aria-hidden="true">
-    <svg viewBox="0 0 1000 190" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="gWire" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#4D7CFF"/><stop offset="55%" stop-color="#A855F7"/><stop offset="100%" stop-color="#FF6B9D"/>
-        </linearGradient>
-        <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
-          <feGaussianBlur stdDeviation="3.4" result="b"/>
-          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-
-      <!-- wires -->
-      <g class="wires" fill="none" stroke="url(#gWire)" stroke-width="1.6" opacity=".5">
-        <path id="s1" d="M112,95 H196"/>
-        <path id="s2" d="M286,95 C332,95 344,52 400,52"/>
-        <path id="s3" d="M286,95 C332,95 344,138 400,138"/>
-        <path id="s4" d="M500,52 C556,52 566,95 612,95"/>
-        <path id="s5" d="M510,138 C562,138 572,95 612,95"/>
-        <path id="s6" d="M702,95 H796"/>
-      </g>
-
-      <!-- travelling contacts -->
-      <g fill="#8FB0FF" filter="url(#glow)">
-        <circle r="3.6"><animateMotion dur="2.1s" repeatCount="indefinite"><mpath href="#s1"/></animateMotion></circle>
-        <circle r="3.6"><animateMotion dur="2.1s" begin="1.05s" repeatCount="indefinite"><mpath href="#s1"/></animateMotion></circle>
-        <circle r="3.4" fill="#C6A0FF"><animateMotion dur="2.4s" begin="2.1s" repeatCount="indefinite"><mpath href="#s2"/></animateMotion></circle>
-        <circle r="3.4" fill="#C6A0FF"><animateMotion dur="2.4s" begin="3.2s" repeatCount="indefinite"><mpath href="#s3"/></animateMotion></circle>
-        <circle r="3.4" fill="#FFC48F"><animateMotion dur="2.2s" begin="4.5s" repeatCount="indefinite"><mpath href="#s4"/></animateMotion></circle>
-        <circle r="3.4" fill="#FFC48F"><animateMotion dur="2.2s" begin="5.6s" repeatCount="indefinite"><mpath href="#s5"/></animateMotion></circle>
-        <circle r="3.8" fill="#FF9CC0"><animateMotion dur="1.9s" begin="6.7s" repeatCount="indefinite"><mpath href="#s6"/></animateMotion></circle>
-      </g>
-
-      <!-- nodes -->
-      <g class="node">
-        <rect x="20" y="77" width="92" height="36" rx="6"/>
-        <text x="66" y="100">audience</text>
-      </g>
-      <g class="node">
-        <rect x="196" y="77" width="90" height="36" rx="6"/>
-        <text x="241" y="100">trigger</text>
-      </g>
-      <g class="node n-b">
-        <rect x="400" y="34" width="100" height="36" rx="6"/>
-        <text x="450" y="57">email</text>
-      </g>
-      <g class="node n-c">
-        <rect x="400" y="120" width="110" height="36" rx="6"/>
-        <text x="455" y="143">whatsapp</text>
-      </g>
-      <g class="node">
-        <rect x="612" y="77" width="90" height="36" rx="6"/>
-        <text x="657" y="100">score</text>
-      </g>
-      <g class="node n-d">
-        <rect x="796" y="77" width="106" height="36" rx="6"/>
-        <text x="849" y="100">converted</text>
-      </g>
-    </svg>
+  <div class="hero-title-wrap pad">
+    <h1 class="hero-h hero-heading fade-in" style="--fade-y:40px" data-delay="150">Hi, i&apos;m priya</h1>
   </div>
 
-  <section class="up">
-    <div class="label">About me</div>
-    <div class="body">
-      <p>I have over three years of experience in B2B marketing, primarily in the industrial automation sector. My expertise includes marketing automation, customer journey design, audience segmentation, and performance tracking to create data-driven campaigns that deliver measurable results.</p>
-    </div>
-  </section>
-
-  <section class="up">
-    <div class="label">The toolkit
-      <svg class="mini" viewBox="0 0 60 44" aria-hidden="true">
-        <g fill="none" stroke="#4D7CFF" stroke-width="1.3" opacity=".55">
-          <path d="M4,22 H22"/><path d="M22,22 C32,22 32,8 46,8"/><path d="M22,22 C32,22 32,36 46,36"/>
-        </g>
-        <circle r="2.4" fill="#8FB0FF"><animate attributeName="cx" values="4;22" dur="1.4s" repeatCount="indefinite"/><animate attributeName="cy" values="22;22" dur="1.4s" repeatCount="indefinite"/></circle>
-        <circle r="2.2" fill="#C6A0FF" cx="46" cy="8"><animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="1.4s" repeatCount="indefinite"/></circle>
-        <circle r="2.2" fill="#FFC48F" cx="46" cy="36"><animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="2.1s" repeatCount="indefinite"/></circle>
-      </svg>
-    </div>
-    <div class="body kit">
-      <div><h3>Automation</h3><div class="tags t-blue">
-        <span class="tag">Zoho Campaigns</span><span class="tag">Mailchimp</span>
-        <span class="tag">AiSensy · WhatsApp API</span><span class="tag">Zoho CRM</span></div></div>
-      <div><h3>Numbers</h3><div class="tags t-green">
-        <span class="tag">GA4</span><span class="tag">Search Console</span>
-        <span class="tag">Power BI</span><span class="tag">MySQL</span></div></div>
-      <div><h3>Channels</h3><div class="tags t-amber">
-        <span class="tag">Email</span><span class="tag">WhatsApp</span><span class="tag">SEO</span>
-        <span class="tag">Google Ads</span><span class="tag">Social</span><span class="tag">Webinars</span></div></div>
-      <div><h3>Shipping</h3><div class="tags t-violet">
-        <span class="tag">Agile &amp; Scrum</span><span class="tag">QA</span><span class="tag">Azure DevOps</span></div></div>
-    </div>
-  </section>
-
-  <section class="up">
-    <div class="label">Stuff I built
-      <svg class="mini" viewBox="0 0 60 44" aria-hidden="true">
-        <rect x="8" y="13" width="30" height="20" rx="2.5" fill="none" stroke="#A855F7" stroke-width="1.3" opacity=".6"/>
-        <path d="M8,15 L23,25 L38,15" fill="none" stroke="#A855F7" stroke-width="1.3" opacity=".6"/>
-        <g stroke="#FF6B9D" stroke-width="1.4" stroke-linecap="round" opacity=".8">
-          <path d="M43,17 H52"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/></path>
-          <path d="M43,23 H55"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" begin=".3s" repeatCount="indefinite"/></path>
-          <path d="M43,29 H50"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" begin=".6s" repeatCount="indefinite"/></path>
-        </g>
-      </svg>
-    </div>
-    <div class="body">
-      <div class="entry">
-        <h3>The lifecycle programme</h3>
-        <p class="meta">MEL Systems · 2025 – now</p>
-        <p>Six automated journeys running across twenty thousand contacts. Segmentation, A/B tests, nurture logic, handoff into CRM.</p>
-        <div class="tags t-blue"><span class="tag">Zoho Campaigns</span><span class="tag">Zoho CRM</span></div>
-      </div>
-      <div class="entry">
-        <h3>Consulting on the whole funnel</h3>
-        <p class="meta">Freelance · digital marketing consultant · 2025</p>
-        <p>Seven WhatsApp broadcasts to eight thousand people on the official Meta API — audience upload, segmentation, templates, scheduling. Ran their social alongside it.</p>
-        <div class="tags t-amber"><span class="tag">AiSensy</span><span class="tag">WhatsApp</span><span class="tag">Social Media</span></div>
-      </div>
-      <div class="entry">
-        <h3>Fleet 2.0</h3>
-        <p class="meta">Gove · 2023 – 2025</p>
-        <p>A vehicle and plate system replacing a manual process. I owned QA across releases and ran the sprints for a team of fifteen, at 95% on-time delivery.</p>
-        <div class="tags t-violet"><span class="tag">Azure DevOps</span><span class="tag">MySQL</span><span class="tag">QA</span></div>
-      </div>
-      <div class="entry">
-        <h3>Marketing from zero</h3>
-        <p class="meta">Adarsh Shipping · 2022 – 2023</p>
-        <p>No traffic, no list, no playbook. I built the email programme, the SEO and the first Google Ads campaigns — and set up GA4 so we could finally see what was working.</p>
-        <div class="tags t-green"><span class="tag">Mailchimp</span><span class="tag">GA4</span><span class="tag">SEO</span><span class="tag">Google Ads</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="up">
-    <div class="label">Where I've worked</div>
-    <div class="body rows">
-      <div class="row"><div><span class="who">MEL Systems &amp; Services</span><span class="what">Marketing Executive</span></div><div class="when">2025 – now</div></div>
-      <div class="row"><div><span class="who">Freelance</span><span class="what">Digital Marketing Consultant</span></div><div class="when">2025</div></div>
-      <div class="row"><div><span class="who">Gove</span><span class="what">Analyst — QA &amp; Delivery</span></div><div class="when">2023 – 2025</div></div>
-      <div class="row"><div><span class="who">Adarsh Shipping</span><span class="what">Digital Marketing</span></div><div class="when">2022 – 2023</div></div>
-    </div>
-  </section>
-
-  <section class="up">
-    <div class="label">Education</div>
-    <div class="body rows">
-      <div class="row"><div><span class="who">MBA</span><span class="what">Jerusalem College of Engineering</span></div><div class="when">2021 – 2023</div></div>
-      <div class="row"><div><span class="who">BCA</span><span class="what">Shasun Jain College for Women</span></div><div class="when">2018 – 2021</div></div>
-      <div class="row"><div><span class="who">Languages</span><span class="what">English, Tamil, Kannada</span></div><div class="when"></div></div>
-    </div>
-  </section>
-
-  <section class="up">
-    <div class="label">Off the clock</div>
-    <div class="body life">
-      <div><span>◉</span><p>Coffee, always.</p></div>
-      <div><span>◈</span><p>I travel as much as I can. Preferably without a plan.</p></div>
-      <div><span>◍</span><p>Extrovert. People give me energy.</p></div>
-      <div><span>◆</span><p>I like learning new things. I get bored otherwise.</p></div>
-    </div>
-  </section>
-
-  <div class="close up">
-    <h2>Say hi.</h2>
-    <p>Martech, B2B SaaS — anywhere the campaign layer is taken seriously.</p>
-    <div class="chips">
-      <a href="mailto:priyadharshinyk@gmail.com">priyadharshinyk@gmail.com</a>
-      <a href="https://www.linkedin.com/in/priyadharshiny-kubair">LinkedIn</a>
-      <a href="tel:+916381156151">+91 63811 56151</a>
+  <div class="hero-portrait-wrap" id="magnetWrap">
+    <div class="hero-portrait-inner fade-in" id="magnetInner" style="--fade-y:30px" data-delay="600">
+      <img id="faceFallback" src="assets/portrait.png" alt="Portrait of Priyadharshiny K">
+      <canvas id="faceGl" aria-hidden="true"></canvas>
+      <span class="portrait-hint" id="portraitHint">Grab me</span>
     </div>
   </div>
 
-</div>
+  <div class="hero-bottom pad">
+    <p class="fade-in" style="--fade-y:20px" data-delay="350">a lifecycle marketing specialist building journeys that turn visitors into customers</p>
+    <a class="contact-btn fade-in magnetic" style="--fade-y:20px" data-delay="500" href="#contact">Contact Me</a>
+  </div>
+</section>
 
-<footer>Priyadharshiny K · Chennai, India</footer>
+<!-- ========== ABOUT ========== -->
+<section class="about" id="about">
+  <div class="deco d-moon" style="width:120px;top:4%;left:1%"><div class="obj fade-in" style="--fade-x:-80px;--fade-y:0" data-delay="100"></div></div>
+  <div class="deco d-blob" style="width:100px;bottom:8%;left:3%"><div class="obj fade-in" style="--fade-x:-80px;--fade-y:0" data-delay="250"></div></div>
+  <div class="deco d-ring" style="width:120px;top:4%;right:1%"><div class="obj fade-in" style="--fade-x:80px;--fade-y:0" data-delay="150"></div></div>
+  <div class="deco d-brick" style="width:130px;bottom:8%;right:3%"><div class="obj fade-in" style="--fade-x:80px;--fade-y:0" data-delay="300"></div></div>
+
+  <div class="stack">
+    <h2 class="hero-heading fade-in" style="--fade-y:40px" data-delay="0">About me</h2>
+    <div id="aboutText">
+    <p>I&rsquo;m a data-driven marketer passionate about marketing automation, growth and technology. I combine creative thinking with an analytical mindset to build smarter campaigns, streamline marketing processes and turn audience insights into measurable results.</p>
+    <p>With experience across digital marketing, analytics and QA, I enjoy exploring new tools, solving problems and building marketing systems that work smarter and scale better.</p>
+  </div>
+  </div>
+  <div class="btnwrap fade-in" style="--fade-y:20px" data-delay="150">
+    <a class="contact-btn magnetic" href="#contact">Contact Me</a>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="svc" id="work">
+  <h2 class="fade-in" style="--fade-y:40px">What i do</h2>
+  <div class="svc-list" id="svcList"></div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <h2 class="hero-heading fade-in" style="--fade-y:40px">Let&apos;s build<br>something</h2>
+  <a class="mail fade-in" style="--fade-y:20px" data-delay="120" href="mailto:priyadharshinyk@gmail.com">priyadharshinyk@gmail.com</a>
+  <div class="links fade-in" style="--fade-y:20px" data-delay="200">
+    <a class="ghost-btn magnetic" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="ghost-btn magnetic" href="assets/Priyadharshiny_K_Resume.pdf" download>Resume</a>
+    <a class="contact-btn magnetic" href="mailto:priyadharshinyk@gmail.com">Contact Me</a>
+  </div>
+</section>
+
+<footer>Priyadharshiny K — Lifecycle Marketing — Chennai, India</footer>
+</div>
 
 <script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // highlighter sweep
-  var mark = document.querySelector('.mark');
-  if (mark) {
-    if (reduce) mark.classList.add('on');
-    else setTimeout(function(){ mark.classList.add('on'); }, 950);
-  }
-
-  // scroll progress
-  var prog = document.getElementById('prog');
-  if (prog && !reduce) {
-    var tick = false;
-    window.addEventListener('scroll', function(){
-      if (tick) return;
-      tick = true;
-      requestAnimationFrame(function(){
-        var h = document.documentElement.scrollHeight - window.innerHeight;
-        prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-        tick = false;
-      });
-    }, { passive: true });
-  }
-
-  // section reveals with child stagger
-  var els = document.querySelectorAll('.up');
-  if (reduce || !('IntersectionObserver' in window)) {
-    els.forEach(function(e){ e.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
+/* ============================================================
+   FADE IN
+   ============================================================ */
+(() => {
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => {
       if (!e.isIntersecting) return;
-      var kids = e.target.querySelectorAll('.entry, .row, .kit > div, .life > div');
-      kids.forEach(function(kid, i){
-        kid.style.transition = 'opacity .5s ease ' + (i*70) + 'ms, transform .5s ease ' + (i*70) + 'ms';
-        kid.style.opacity = 0; kid.style.transform = 'translateY(10px)';
-        requestAnimationFrame(function(){ requestAnimationFrame(function(){
-          kid.style.opacity = 1; kid.style.transform = 'none';
-        }); });
-      });
-      e.target.classList.add('in');
+      const d = parseInt(e.target.dataset.delay || '0', 10);
+      setTimeout(() => e.target.classList.add('vis'), d);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-  els.forEach(function(e){ io.observe(e); });
+  }, {rootMargin: '50px', threshold: 0});
+  const watch = () => document.querySelectorAll('.fade-in:not(.vis)').forEach(el => io.observe(el));
+  window.__watchFade = watch;
+  watch();
+})();
+
+/* ============================================================
+   ANIMATED TEXT — char-by-char on scroll
+   ============================================================ */
+(() => {
+  const el = document.getElementById('aboutText');
+  if (!el) return;
+  el.querySelectorAll('p').forEach(p => {
+    p.innerHTML = [...p.textContent].map(c => {
+      const g = c === ' ' ? '&nbsp;' : c;
+      return `<span class="ch"><span style="opacity:0">${g}</span><span class="lit">${g}</span></span>`;
+    }).join('');
+  });
+  const lits = [...el.querySelectorAll('.lit')];
+  let tick = false;
+  const run = () => {
+    const r = el.getBoundingClientRect();
+    const start = innerHeight * 0.8, end = innerHeight * 0.2;
+    let p = (start - r.top) / Math.max(1, (start - end) * 0.5 + r.height);
+    p = Math.min(1, Math.max(0, p));
+    const upto = p * lits.length;
+    lits.forEach((s, i) => { s.style.opacity = i < upto ? 1 : 0.2; });
+    tick = false;
+  };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(run); } }, {passive: true});
+  run();
+})();
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+(() => {
+  const S = [
+    ['01', 'Marketing Automation &amp; Lifecycle Marketing', [
+      'I design and manage automated marketing journeys that move contacts from initial engagement to inquiry. From database segmentation and behavioural targeting to trigger-based workflows, multi-touch nurturing and campaign scheduling, I build structured communication systems using Zoho Campaigns, Zoho CRM, Mailchimp and AiSensy.'
+    ], 'I\u2019ve managed B2B databases of up to 20,000 contacts, built six automated journeys and maintained campaign performance above industry benchmarks.'],
+
+    ['02', 'Performance Marketing &amp; Lead Generation', [
+      'I plan and execute campaigns with a clear focus on audience relevance, acquisition costs and lead quality. My experience includes Google Search Ads, Meta Ads, LinkedIn campaigns and WhatsApp marketing.',
+      'From keyword research and audience targeting to campaign execution and lead tracking, I focus on understanding what drives inquiries rather than simply increasing traffic.'
+    ], 'My campaigns have generated leads at \u20B9250 CPL through Google Search Ads and approximately 20 qualified inquiries per email campaign cycle.'],
+
+    ['03', 'SEO, Content &amp; Organic Growth', [
+      'I research, plan and create content for audiences that require more than generic marketing messages. My experience includes technical B2B content, keyword research, on-page SEO, service-page optimisation, website management and directory listings.',
+      'I work with tools such as SEMrush, Google Keyword Planner, Search Console and AI-assisted research to identify relevant search opportunities and improve organic visibility.'
+    ], 'I\u2019ve helped niche industrial service pages achieve top search positions for targeted industry-specific keywords.'],
+
+    ['04', 'Marketing Analytics &amp; Conversion Tracking', [
+      'I believe marketing performance should be measurable beyond impressions, clicks and open rates. I work with GA4 to implement conversion tracking, monitor campaign performance and understand how visitors move from discovery to inquiry.',
+      'My analytical toolkit also includes Power BI and MySQL, supported by my experience in data validation, reporting and quality analysis.'
+    ], 'I use performance data to identify gaps, evaluate campaign effectiveness and make better marketing decisions.'],
+
+    ['05', 'Technical Execution &amp; Process Building', [
+      'I enjoy taking an idea beyond the planning stage and turning it into something functional. I\u2019ve built websites, developed HTML email templates, created landing pages, managed WordPress properties and implemented marketing processes from the ground up.',
+      'My earlier experience in software QA and project coordination brings another dimension to my marketing work: attention to detail, structured testing, process validation and a habit of checking what could go wrong before something goes live.'
+    ], 'I also use AI-assisted tools and LLMs for research, content development and workflow efficiency.']
+  ];
+  document.getElementById('svcList').innerHTML = S.map(([n, t, paras, proof], i) =>
+    `<div class="svc-item fade-in" data-delay="${i * 100}">
+       <div class="num">${n}</div>
+       <div class="svc-body">
+         <div class="nm">${t}</div>
+         ${paras.map(p => `<p class="ds">${p}</p>`).join('')}
+         <p class="proof">${proof}</p>
+       </div>
+     </div>`).join('');
+  window.__watchFade();
+})();
+
+/* ============================================================
+   MAGNET — magnetic hover on buttons
+   ============================================================ */
+(() => {
+  if (matchMedia('(pointer:coarse)').matches) return;
+  const PAD = 90, STR = 3.2;
+  addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.magnetic').forEach(el => {
+      const r = el.getBoundingClientRect();
+      const inX = e.clientX > r.left - PAD && e.clientX < r.right + PAD;
+      const inY = e.clientY > r.top - PAD && e.clientY < r.bottom + PAD;
+      if (inX && inY) {
+        const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        el.style.transition = 'transform .3s ease-out';
+        el.style.transform = `translate3d(${dx / STR}px, ${dy / STR}px, 0)`;
+        el.style.willChange = 'transform';
+      } else if (el.style.transform) {
+        el.style.transition = 'transform .6s ease-in-out';
+        el.style.transform = '';
+      }
+    });
+  }, {passive: true});
+})();
+</script>
+
+<script>
+/* ============================================================
+   LIVING PORTRAIT
+   One photograph on a soft sheet. The sheet is a damped wave
+   equation; the code only decides how the skin moves. Expression,
+   gaze and blinking are NOT faked — those need many pixel-aligned
+   photos of the same face, so they are simply absent.
+   ============================================================ */
+(() => {
+  const OVER = 1.7, N = 64, M = N + 1, SPAN = OVER / N, ORIGIN = .5 - OVER / 2;
+  const WOBBLE = 2.3 * 2 * Math.PI, REACH = .085 / SPAN, C = REACH * WOBBLE, GAMMA = 2 * .14 * WOBBLE, NU = .2 * C;
+
+  const wrap = document.getElementById('magnetWrap');
+  const canvas = document.getElementById('faceGl');
+  const fallback = document.getElementById('faceFallback');
+  const hint = document.getElementById('portraitHint');
+  if (!canvas) return;
+  const gl = canvas.getContext('webgl', {alpha: true, premultipliedAlpha: true, antialias: true});
+  if (!gl) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const VS = `attribute vec2 a, d; attribute float s; varying vec2 vUv; varying float vS;
+    uniform vec2 lean; uniform float overS;
+    void main(){ vUv = a; vS = s; vec2 p = a + d + lean; gl_Position = vec4(vec2(p.x-.5, .5-p.y)*2./overS, 0., 1.); }`;
+  const FS = `precision highp float; varying vec2 vUv; varying float vS; uniform sampler2D face;
+    void main(){
+      if(vUv.x<0.||vUv.y<0.||vUv.x>1.||vUv.y>1.){ gl_FragColor = vec4(0.); return; }
+      vec4 c = texture2D(face, vUv);
+      if(c.a<.004){ gl_FragColor = vec4(0.); return; }
+      gl_FragColor = vec4(c.rgb*vS, c.a);
+    }`;
+  const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o);
+    if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(o)); return o; };
+  const pr = gl.createProgram();
+  gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS));
+  gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS));
+  gl.linkProgram(pr); gl.useProgram(pr);
+  const U = {
+    over: gl.getUniformLocation(pr, 'overS'),
+    lean: gl.getUniformLocation(pr, 'lean'),
+    face: gl.getUniformLocation(pr, 'face')
+  };
+  gl.uniform1f(U.over, OVER); gl.uniform1i(U.face, 0);
+
+  /* ---- the sheet ---- */
+  const count = M * M;
+  const ux = new Float32Array(count), uy = new Float32Array(count);
+  const vx = new Float32Array(count), vy = new Float32Array(count);
+  const rest = new Float32Array(count * 2), dyn = new Float32Array(count * 3);
+  const sx = new Float32Array(count), sy = new Float32Array(count);
+  for (let j = 0, k = 0; j < M; j++) for (let i = 0; i < M; i++) { rest[k++] = ORIGIN + i * SPAN; rest[k++] = ORIGIN + j * SPAN; }
+  const idx = new Uint16Array(N * N * 6);
+  for (let j = 0, k = 0; j < N; j++) for (let i = 0; i < N; i++) {
+    const a = j * M + i, b = a + 1, c = a + M, d = c + 1;
+    idx[k++] = a; idx[k++] = c; idx[k++] = b; idx[k++] = b; idx[k++] = c; idx[k++] = d;
+  }
+  gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ARRAY_BUFFER, rest, gl.STATIC_DRAW);
+  const aa = gl.getAttribLocation(pr, 'a');
+  gl.enableVertexAttribArray(aa); gl.vertexAttribPointer(aa, 2, gl.FLOAT, false, 0, 0);
+  const dynBuf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, dynBuf); gl.bufferData(gl.ARRAY_BUFFER, dyn, gl.DYNAMIC_DRAW);
+  const ad = gl.getAttribLocation(pr, 'd'), as = gl.getAttribLocation(pr, 's');
+  gl.enableVertexAttribArray(ad); gl.vertexAttribPointer(ad, 2, gl.FLOAT, false, 12, 0);
+  gl.enableVertexAttribArray(as); gl.vertexAttribPointer(as, 1, gl.FLOAT, false, 12, 8);
+  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.createBuffer());
+  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, idx, gl.STATIC_DRAW);
+  gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA); gl.clearColor(0, 0, 0, 0);
+
+  /* a handful of skin */
+  let brush = null;
+  function takeHold(u, v, radius = .22) {
+    const list = [];
+    for (let k = 0; k < count; k++) {
+      const dx = rest[k * 2] + ux[k] - u, dy = rest[k * 2 + 1] + uy[k] - v;
+      const w = Math.exp(-(dx * dx + dy * dy) / (radius * radius));
+      if (w > .02) list.push([k, w, ux[k], uy[k]]);
+    }
+    brush = {u, v, list, px: 0, py: 0};
+  }
+
+  /* The sheet must never fold: overlapping triangles draw as a comb of cuts.
+     Every frame each row and column is forced back into order with a minimum gap. */
+  const GAP = SPAN * .34, lineA = new Float32Array(M), lineB = new Float32Array(M), lineP = new Float32Array(M);
+  const restX = new Float32Array(count), restY = new Float32Array(count);
+  for (let k = 0; k < count; k++) { restX[k] = rest[k * 2]; restY[k] = rest[k * 2 + 1]; }
+  function order(start, stride, field, base) {
+    for (let i = 0; i < M; i++) { const k = start + i * stride; lineP[i] = base[k] + field[k]; }
+    lineA[0] = lineP[0];
+    for (let i = 1; i < M; i++) lineA[i] = Math.max(lineP[i], lineA[i - 1] + GAP);
+    lineB[N] = lineP[N];
+    for (let i = N - 1; i >= 0; i--) lineB[i] = Math.min(lineP[i], lineB[i + 1] - GAP);
+    for (let i = 0; i < M; i++) { const k = start + i * stride; field[k] = (lineA[i] + lineB[i]) / 2 - base[k]; }
+  }
+  function untangle() {
+    for (let pass = 0; pass < 2; pass++) {
+      for (let j = 0; j < M; j++) order(j * M, 1, sx, restX);
+      for (let i = 0; i < M; i++) order(i, M, sy, restY);
+    }
+  }
+
+  /* fixed timestep, or it tears into spikes on large screens */
+  const H = 1 / 240; let simLeft = 0;
+  function step(dt) {
+    const c2 = C * C, wo2 = WOBBLE * WOBBLE;
+    for (let j = 1; j < N; j++) for (let i = 1; i < N; i++) {
+      const k = j * M + i, l = k - 1, r = k + 1, t = k - M, b = k + M;
+      const lx = ux[l] + ux[r] + ux[t] + ux[b] - 4 * ux[k];
+      const ly = uy[l] + uy[r] + uy[t] + uy[b] - 4 * uy[k];
+      const lvx = vx[l] + vx[r] + vx[t] + vx[b] - 4 * vx[k];
+      const lvy = vy[l] + vy[r] + vy[t] + vy[b] - 4 * vy[k];
+      vx[k] += (c2 * lx - wo2 * ux[k] - GAMMA * vx[k] + NU * lvx) * dt;
+      vy[k] += (c2 * ly - wo2 * uy[k] - GAMMA * vy[k] + NU * lvy) * dt;
+    }
+    if (brush) for (const [k, w, u0, v0] of brush.list) {
+      const K = 3000 * w, D = 90 * w;
+      vx[k] += ((u0 + brush.px * w - ux[k]) * K - vx[k] * D) * dt;
+      vy[k] += ((v0 + brush.py * w - uy[k]) * K - vy[k] * D) * dt;
+    }
+    for (let k = 0; k < count; k++) { ux[k] += vx[k] * dt; uy[k] += vy[k] * dt; }
+  }
+  function poke(u, v, dx, dy, radius = .09) {
+    for (let k = 0; k < count; k++) {
+      const ax = rest[k * 2] - u, ay = rest[k * 2 + 1] - v;
+      const w = Math.exp(-(ax * ax + ay * ay) / (radius * radius));
+      vx[k] += dx * w; vy[k] += dy * w;
+    }
+  }
+
+  /* ---- the picture ---- */
+  let tex = null, alphaMap = null, ready = false;
+  function upload(img) {
+    gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
+    tex = gl.createTexture();
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    const a = document.createElement('canvas'); a.width = a.height = 128;
+    const ac = a.getContext('2d', {willReadFrequently: true});
+    ac.drawImage(img, 0, 0, 128, 128);
+    alphaMap = ac.getImageData(0, 0, 128, 128).data;
+    ready = true;
+  }
+
+  /* Until a real portrait.png is dropped in, the sheet carries a drawn
+     placeholder so the physics is live from the first load. */
+  function placeholder() {
+    const S = 1024, c = document.createElement('canvas'); c.width = c.height = S;
+    const x = c.getContext('2d');
+    const g = x.createLinearGradient(0, 0, S, S);
+    g.addColorStop(0, '#18011F'); g.addColorStop(.37, '#B600A8');
+    g.addColorStop(.72, '#7621B0'); g.addColorStop(1, '#BE4C00');
+    x.beginPath(); x.arc(S / 2, S / 2, S * .40, 0, 7); x.fillStyle = g; x.fill();
+    const sheen = x.createRadialGradient(S * .36, S * .3, 0, S * .5, S * .5, S * .5);
+    sheen.addColorStop(0, 'rgba(255,255,255,.34)'); sheen.addColorStop(1, 'rgba(0,0,0,.28)');
+    x.beginPath(); x.arc(S / 2, S / 2, S * .40, 0, 7); x.fillStyle = sheen; x.fill();
+    x.fillStyle = '#fff'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.font = '900 ' + (S * .22) + 'px Kanit, sans-serif';
+    x.fillText('PK', S / 2, S * .47);
+    x.font = '300 ' + (S * .037) + 'px Kanit, sans-serif';
+    x.letterSpacing = '8px';
+    x.fillStyle = 'rgba(255,255,255,.72)';
+    x.fillText('ADD YOUR PHOTO', S / 2, S * .62);
+    return c;
+  }
+
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => { fallback.style.visibility = 'hidden'; upload(img); start(); };
+  img.onerror = () => { fallback.style.visibility = 'hidden'; upload(placeholder()); start(); };
+  img.src = fallback.getAttribute('src');
+
+  /* ---- input ---- */
+  let mx = 0, my = 0, pu = .5, pv = .5, onHead = false;
+  let pressed = false, downU = 0, downV = 0, lastX = 0, lastY = 0, speed = 0, shake = 0;
+  let lastInput = -1e9, awake = false, touched = false;
+  let leanX = 0, leanY = 0, lvX = 0, lvY = 0;
+  let scrollUntil = 0, lastScroll = scrollY, visible = true, last = performance.now(), tStart = 0;
+  let idleAt = 0, breathe = 0;
+
+  const toUv = (x, y) => {
+    const r = canvas.getBoundingClientRect();
+    return [((x - r.left) / r.width - .5) * OVER + .5, ((y - r.top) / r.height - .5) * OVER + .5];
+  };
+  const solid = (u, v) => alphaMap && u >= 0 && v >= 0 && u < 1 && v < 1 &&
+    alphaMap[(((v * 128) | 0) * 128 + ((u * 128) | 0)) * 4 + 3] > 40;
+
+  addEventListener('pointermove', (e) => {
+    const now = performance.now();
+    const dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY; mx = e.clientX; my = e.clientY;
+    [pu, pv] = toUv(mx, my);
+    speed += Math.hypot(dx, dy) * .004;
+    lastInput = now; awake = true;
+    onHead = solid(pu, pv);
+    wrap.style.cursor = pressed ? 'grabbing' : onHead ? 'grab' : '';
+    if (onHead && !pressed) poke(pu, pv, dx * .00035, dy * .00035, .07);
+    if (pressed && brush) {
+      let px = pu - brush.u, py = pv - brush.v;
+      const L = Math.hypot(px, py), lim = .24;
+      if (L > 0) { const k = lim * (1 - Math.exp(-L / lim)) / L; px *= k; py *= k; }
+      brush.px = px; brush.py = py;
+    }
+  }, {passive: true});
+
+  wrap.addEventListener('pointerdown', (e) => {
+    const [u, v] = toUv(e.clientX, e.clientY);
+    if (!solid(u, v)) return;
+    pressed = true; downU = u; downV = v; takeHold(u, v);
+    lastInput = performance.now(); awake = true;
+    if (!touched) { touched = true; hint.classList.add('gone'); }
+    wrap.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  function release() {
+    if (!pressed) return;
+    pressed = false;
+    if (brush) {
+      const L = Math.hypot(brush.px, brush.py);
+      if (L < .03) poke(downU, downV, 0, .55, .07);
+    }
+    brush = null;
+    wrap.style.cursor = onHead ? 'grab' : '';
+  }
+  addEventListener('pointerup', release);
+  addEventListener('pointercancel', release);
+  addEventListener('scroll', () => {
+    const n = performance.now();
+    if (Math.abs(scrollY - lastScroll) > 2) { scrollUntil = n + 500; lastScroll = scrollY; }
+    lastInput = n;
+  }, {passive: true});
+  document.querySelectorAll('.contact-btn').forEach(b => {
+    b.addEventListener('pointerenter', () => { poke(.5, .5, 0, -.45, .2); lastInput = performance.now(); });
+    b.addEventListener('pointerleave', () => { poke(.5, .5, 0, .3, .2); });
+  });
+
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; }, {threshold: 0}).observe(canvas);
+  new ResizeObserver(() => {
+    const r = Math.min(devicePixelRatio || 1, 2), b = canvas.getBoundingClientRect();
+    canvas.width = b.width * r; canvas.height = b.height * r;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+  }).observe(canvas);
+
+  /* ---- frame ---- */
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min(.04, (now - last) / 1000); last = now;
+    if (!ready || !visible) return;
+    const f = (r) => 1 - Math.exp(-dt * r);
+
+    speed *= Math.exp(-dt * 6);
+    shake += ((speed > 1.5 ? 1 : 0) - shake) * f(speed > 1.5 ? 1.2 : .9);
+    if (shake > .55) poke(.5, .42, (Math.random() - .5) * .22, (Math.random() - .5) * .14, .3);
+
+    /* left alone for a while, she breathes */
+    if (!reduced && !pressed && tStart && now - lastInput > 4000) {
+      breathe += dt;
+      if (breathe > 3.4) { breathe = 0; poke(.5, .55, 0, -.09, .34); }
+    } else breathe = 0;
+
+    /* lean toward the pull, the cursor, and down a little while scrolling */
+    const scrollLean = now < scrollUntil ? .012 : 0;
+    const tx = (pressed ? (brush ? brush.px * .16 : 0) : awake ? (pu - .5) * .012 : 0) + Math.sin(now * .0009) * .0015;
+    const ty = (pressed ? (brush ? brush.py * .16 : 0) : awake ? (pv - .46) * .008 : 0) + scrollLean + Math.sin(now * .0013) * .0022;
+    lvX += ((tx - leanX) * 70 - lvX * 8) * dt; lvY += ((ty - leanY) * 70 - lvY * 8) * dt;
+    leanX += lvX * dt; leanY += lvY * dt;
+
+    simLeft += dt;
+    let steps = 0;
+    while (simLeft >= H && steps < 9) { step(H); simLeft -= H; steps++; }
+    if (steps === 9) simLeft = 0;
+
+    for (let j = 0; j < M; j++) for (let i = 0; i < M; i++) {
+      const k = j * M + i, edge = i === 0 || j === 0 || i === N || j === N;
+      sx[k] = edge ? ux[k] : (ux[k] * 4 + ux[k - 1] + ux[k + 1] + ux[k - M] + ux[k + M]) / 8;
+      sy[k] = edge ? uy[k] : (uy[k] * 4 + uy[k - 1] + uy[k + 1] + uy[k - M] + uy[k + M]) / 8;
+    }
+    untangle();
+    for (let k = 0, o = 0; k < count; k++) {
+      dyn[o++] = sx[k]; dyn[o++] = sy[k];
+      const r = k % M, c = (k / M) | 0;
+      let shade = 1;
+      if (r > 0 && r < N && c > 0 && c < N) {
+        shade = Math.max(.86, Math.min(1.16, 1 - ((sx[k + 1] - sx[k - 1]) + (sy[k + M] - sy[k - M])) * 1.8));
+      }
+      dyn[o++] = shade;
+    }
+    gl.bindBuffer(gl.ARRAY_BUFFER, dynBuf);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, dyn);
+
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.uniform2f(U.lean, leanX, leanY);
+    gl.drawElements(gl.TRIANGLES, idx.length, gl.UNSIGNED_SHORT, 0);
+  }
+  function start() { tStart = performance.now(); last = tStart; requestAnimationFrame(frame); }
 })();
 </script>
 </body>
